@@ -1,4 +1,4 @@
-name: Publish blrchen/chatgpt-lite
+name: Publish blrchen/ubitgpt-lite
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: blrchen/chatgpt-lite
+          images: blrchen/ubitgpt-lite
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

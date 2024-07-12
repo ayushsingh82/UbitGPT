@@ -10,7 +10,7 @@ import { Chat, ChatMessage, Persona } from './interface'
 
 export const DefaultPersonas: Persona[] = [
   {
-    id: 'chatgpt',
+    id: 'ubitgpt',
     role: 'system',
     name: 'UbitGPT',
     prompt: 'You are an AI assistant that helps people find information.',

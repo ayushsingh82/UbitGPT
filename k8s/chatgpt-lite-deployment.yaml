@@ -2,25 +2,25 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: chatgpt-lite
+  name: ubitgpt-lite
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: chatgpt-lite
-  name: chatgpt-lite
-  namespace: chatgpt-lite
+    app: ubitgpt-lite
+  name: ubitgpt-lite
+  namespace: ubitgpt-lite
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: chatgpt-lite
+      app: ubitgpt-lite
   strategy: {}
   template:
     metadata:
       labels:
-        app: chatgpt-lite
+        app: ubitgpt-lite
     spec:
       containers:
         - env:
@@ -49,8 +49,8 @@ spec:
                 secretKeyRef:
                   key: OPENAI_API_KEY
                   name: env
-          image: docker.io/blrchen/chatgpt-lite:main
-          name: chatgpt-lite
+          image: docker.io/blrchen/ubitgpt-lite:main
+          name: ubitgpt-lite
           ports:
             - containerPort: 3000
           resources: {}
@@ -61,13 +61,13 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: chatgpt-lite
-  name: chatgpt-lite
-  namespace: chatgpt-lite
+    app: ubitgpt-lite
+  name: ubitgpt-lite
+  namespace: ubitgpt-lite
 spec:
   ports:
     - name: "3000"
       port: 3000
       targetPort: 3000
   selector:
-    app: chatgpt-lite
+    app: ubitgpt-lite
